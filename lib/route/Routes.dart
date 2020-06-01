@@ -15,5 +15,6 @@ class Routes {
 
     router.define('/', handler: rootHandler);
     router.define('/camera', handler: cameraHandler);
+    router.define('/player', handler: playerHandler);
   }
 }

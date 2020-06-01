@@ -13,7 +13,7 @@ class SplashPage extends StatefulWidget {
 class SplashState extends State<SplashPage> {
   onNextClick() {
 //    Navigator.pushNamed(context, '/camera');
-    Application.router.navigateTo(context, "/camera", transition: TransitionType.fadeIn);
+    Application.router.navigateTo(context, "/player", transition: TransitionType.fadeIn);
   }
 
   @override

@@ -35,6 +35,7 @@ dependencies:
   image_pickers: ^1.0.7+1
   gallery_saver: ^2.0.1
   fluro: ^1.6.3
+  video_player: ^0.10.11+1
 gradle:
   properties:
 
