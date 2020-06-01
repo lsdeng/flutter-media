@@ -1,3 +1,5 @@
+import 'package:fili/application.dart';
+import 'package:fluro/fluro.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +12,8 @@ class SplashPage extends StatefulWidget {
 
 class SplashState extends State<SplashPage> {
   onNextClick() {
-    Navigator.pushNamed(context, '/camera');
+//    Navigator.pushNamed(context, '/camera');
+    Application.router.navigateTo(context, "/camera", transition: TransitionType.fadeIn);
   }
 
   @override

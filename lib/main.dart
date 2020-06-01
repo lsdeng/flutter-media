@@ -1,9 +1,10 @@
 import 'dart:io';
 
 import 'package:camera/camera.dart';
-import 'package:fili/CameraPage.dart';
-import 'package:fili/SplashPage.dart';
+import 'package:fili/application.dart';
 import 'package:fili/manager/CameraManger.dart';
+import 'package:fili/route/Routes.dart';
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -29,6 +30,12 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+  MyApp() {
+    final router = Router();
+    Routes.configureRoutes(router);
+    Application.router = router;
+  }
+
   @override
   Widget build(BuildContext context) {
     // 设置安卓沉浸式状态栏
@@ -39,10 +46,6 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       initialRoute: '/',
-      routes: {
-        '/': (context) => SplashPage(),
-        '/camera': (context) => CameraPage(),
-      },
       showSemanticsDebugger: false,
       theme: ThemeData(
         primaryColor: Colors.white,
@@ -67,6 +70,8 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
+      debugShowCheckedModeBanner: false,
+      onGenerateRoute: Application.router.generator,
     );
   }
 }
